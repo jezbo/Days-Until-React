@@ -9,6 +9,7 @@ const ResultsList = ({listIsActive}:any) => {
         if(listIsActive) return 'active';
     }
 
+    /* -----JSX----- */
     return(
         <ul
             className={`all-results ${listSwitch()}`}
