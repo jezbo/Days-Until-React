@@ -50,7 +50,7 @@ const ResultItem = ({name, date}:dateData) => {
     return(
 
         <li className='result-item'>
-           {daysUntil} days until {name} 
+           {daysUntil()} days until {name} 
         </li>
 
     )

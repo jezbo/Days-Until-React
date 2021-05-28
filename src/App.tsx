@@ -2,9 +2,10 @@ import './App.css';
 import React, { useState } from 'react';
 import Header from './Components/Header/Header'
 import dates from './Data/dates';
-import ResultItem from './Functions/ResultItem'; 
+import ResultItem from './Components/Results/ResultItem'; 
 
 function App() {
+
   //list visibilility managed by state boolean
   const [listIsActive, setListIsActive] = useState(false);
 
@@ -21,6 +22,7 @@ function App() {
   }
 
   /* -----JSX----- */
+  //ResultItem calculates the Days Until... and returns an <li> component
   return (
     <div className="App">
       
@@ -35,6 +37,7 @@ function App() {
       </ul>
 
       <button onClick={onClick}>Show Days Until</button>
+
     </div>
   );
 }
