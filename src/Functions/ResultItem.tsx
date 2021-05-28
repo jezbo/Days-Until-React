@@ -1,15 +1,20 @@
+import React from 'react';
+
 //Data Validation
-type date = {
-    year: number,
-    month: number,
-    day: number
+interface dateData {
+    name: string;
+    date:Date
+}
+interface Date {
+    year: number;
+    month: number;
+    day: number;
 }
 
+/** Function Component */
+const ResultItem = ({name, date}:dateData) => {
 
-/** Function */
-const calculateDaysUntil = (stateSetter:any, name:string, date:date) => {
-
-    /* -----METHODS----- */
+    //CALCULATE DAYS UNTIL:
 
     //format the given date
     const givenDate = () => {
@@ -41,14 +46,15 @@ const calculateDaysUntil = (stateSetter:any, name:string, date:date) => {
         return Math.ceil(millisecondsToDays());
     }
 
-    const resultObject = {
-        name,
-        days: daysUntil()
-    };
+    /* -----JSX----- */
+    return(
 
-    //add days until data to the listArray state
-    stateSetter((prev: number[]) => [...prev, resultObject]);
+        <li className='result-item'>
+           {daysUntil} days until {name} 
+        </li>
+
+    )
     
 }
 
-export default calculateDaysUntil;
+export default ResultItem;

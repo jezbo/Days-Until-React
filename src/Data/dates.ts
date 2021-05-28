@@ -1,6 +1,6 @@
-/* An array of date objects with name and date */
+//An array of date objects with name and date
 //!!Months are 0 indexed!!
-const datesData = [
+const dates = [
     {
         name: 'Christmas',
         date: {
@@ -27,4 +27,4 @@ const datesData = [
     }
 ]
 
-export default datesData;
+export default dates;
