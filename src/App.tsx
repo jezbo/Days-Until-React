@@ -1,8 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import Header from './Components/Header/Header'
-import dates from './Data/dates';
-import ResultItem from './Components/Results/ResultItem'; 
+import ResultsList from './Components/Results/ResultsList'; 
 
 function App() {
 
@@ -11,30 +10,16 @@ function App() {
 
   //button click toggles list state 
   const onClick = () => {
-    console.log('clicked!!')
-    console.log('state: ' + listIsActive)
     setListIsActive( !listIsActive );
   }
 
-  //list state affects the className and consequentially CSS 
-  const listSwitch = () => {
-    if(listIsActive) return 'active';
-  }
-
   /* -----JSX----- */
-  //ResultItem calculates the Days Until... and returns an <li> component
   return (
     <div className="App">
       
       <Header/>
 
-      <ul
-        className={`all-results ${listSwitch()}`}
-      >
-        {ResultItem(dates[0])}
-        {ResultItem(dates[1])}
-        {ResultItem(dates[2])}
-      </ul>
+      <ResultsList listIsActive={listIsActive} />
 
       <button onClick={onClick}>Show Days Until</button>
 
