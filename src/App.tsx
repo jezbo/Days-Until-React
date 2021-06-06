@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import Header from './Components/Header/Header'
 import ResultsList from './Components/Results/ResultsList'; 
+import Sidebar from './Components/Sidebar/Sidebar';
 
 function App() {
 
@@ -17,11 +18,19 @@ function App() {
   return (
     <div className="App">
       
-      <Header/>
+      <Sidebar/>
 
-      <ResultsList listIsActive={listIsActive} />
+      <div className='main-body'>
 
-      <button onClick={onClick}>Show Days Until</button>
+        <Header/>
+        <ResultsList listIsActive={listIsActive} />
+        <div className='button-container'>
+
+          <button onClick={onClick}>Show Days Until</button>
+          
+        </div>
+
+      </div>
 
     </div>
   );
